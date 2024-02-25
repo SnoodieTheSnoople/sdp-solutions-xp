@@ -1,95 +1,85 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+const Navbar = {
+    background: "white",
+    color: "black",
+    height: "5vh",
+};
+
+const viewContainer = {
+    display: "grid",
+    gridTemplateColumns: "1fr 1fr",
+    gridColumnGap: "10px",
+    background: "green",
+    height: "80vh",
+};
+
+const left = {
+    background: "red",
+};
+
+const right = {
+    background: "blue",
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <div>
+      <div className="flex justify-center items-center h-10 bg-black" >
+        <p className="text-white">[Logo]</p>
+      </div>
+
+      <div className="grid grid-cols-2 gap-1 bg-green h-[80vh]">
+        <div className="flex flex-wrap w-full bg-red-600 justify-center p-2 gap-2">
+          <div className="w-full h-64 bg-white">
+            <p>File drop component</p>
+          </div>
+          
+          <div className="grid grid-cols-4 w-full h-12 bg-white content-center gap-1">
+            <div className="bg-blue-100">
+              <p className="text-center">Java</p>
+            </div>
+
+            <div className="bg-blue-100">
+              <p className="text-center">Python</p>
+            </div>
+
+            <div className="bg-blue-100">
+              <p className="text-center">PHP</p>
+            </div>
+
+            <div className="bg-blue-100">
+              <p className="text-center">C#</p>
+            </div>
+          </div>
+          
+          <div className="bg-white h-6">
+            <h2>RESULTS</h2>
+          </div>
+
+          <div className="grid grid-cols-2 w-full">
+            <div className="col-span-2">
+              <p>Cyclomatic Complexity</p>
+            </div>
+
+            <div className="col-span-2">
+              <p>Nodes</p>
+            </div>
+
+            <div className="col-span-2">
+              <p>Edges</p>
+            </div>
+            
+            <div className="col-span-2">
+              <p>Connected Components</p>
+            </div>
+          </div>
+
+        </div>
+        <div className="flex flex-wrap w-full bg-blue-600 justify-center p-2 gap-2">
+          <div className="w-full h-full bg-white">
+            <p>PREVIEW</p>
+          </div>
         </div>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </div>
   );
 }
