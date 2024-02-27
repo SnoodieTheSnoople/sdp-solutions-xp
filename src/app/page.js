@@ -80,8 +80,9 @@ export default function Home() {
         </div>
         <div className="flex flex-wrap w-full bg-blue-600 justify-center p-2 gap-2">
           <div className="w-full h-full bg-white">
-            <p>PREVIEW</p>
+            <p>Code Preview</p>
           </div>
+          <button className="btn bg-blue-100">SAVE</button>
         </div>
       </div>
     </div>
