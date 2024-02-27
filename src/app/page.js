@@ -52,24 +52,28 @@ export default function Home() {
           </div>
           
           <div className="bg-white h-6">
-            <h2>RESULTS</h2>
+            <h2 className="h2 font-bold">RESULTS</h2>
           </div>
 
           <div className="grid grid-cols-2 w-full">
-            <div className="col-span-2">
-              <p>Cyclomatic Complexity</p>
+            <div className="col-span-2 grid grid-cols-2">
+              <p className="text-center">Cyclomatic Complexity</p>
+              <p className="text-left">0</p>
             </div>
 
-            <div className="col-span-2">
-              <p>Nodes</p>
+            <div className="col-span-2 grid grid-cols-2">
+              <p className="text-center">Nodes</p>
+              <p className="text-left">0</p>
             </div>
 
-            <div className="col-span-2">
-              <p>Edges</p>
+            <div className="col-span-2 grid grid-cols-2">
+              <p className="text-center">Edges</p>
+              <p className="text-left">0</p>
             </div>
             
-            <div className="col-span-2">
-              <p>Connected Components</p>
+            <div className="col-span-2 grid grid-cols-2">
+              <p className="text-center">Connected Components</p>
+              <p className="text-left">0</p>
             </div>
           </div>
 
