@@ -19,7 +19,6 @@ export default function Home() {
 
           <Divider><p>Alternatively</p></Divider>
 
-          {/* <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Copy & Paste Your Code Here</label> */}
           <Label htmlFor="message" value='Copy & Paste Your Code Here'/>
           <textarea id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
           <br></br>
@@ -43,6 +42,23 @@ export default function Home() {
               <p className="flex items-center justify-end font-bold">Cyclomatic Complexity</p>
               <p className="flex items-center justify-center bg-white rounded-lg w-10 h-10" id="ccResults">0</p>
             </div>
+
+            <br></br>
+
+            <div className="col-span-2 grid grid-cols-2 gap-5">
+              <p className="flex items-center justify-end font-bold">Nodes</p>
+              <p className="flex items-center justify-center bg-white rounded-lg w-10 h-10" id="ccResults">0</p>
+            </div>
+
+            <div className="col-span-2 grid grid-cols-2 gap-5 pt-2">
+              <p className="flex items-center justify-end font-bold">Edges</p>
+              <p className="flex items-center justify-center bg-white rounded-lg w-10 h-10" id="ccResults">0</p>
+            </div>
+
+            <div className="col-span-2 grid grid-cols-2 gap-5 pt-2">
+              <p className="flex items-center justify-end font-bold">Components</p>
+              <p className="flex items-center justify-center bg-white rounded-lg w-10 h-10" id="ccResults">0</p>
+            </div>
           </div>
 
         </div>
@@ -54,7 +70,7 @@ export default function Home() {
             {/* INSERT READ CODE HERE */}
           </div>
         </div>
-        <Button color="light" className='w-full col-start-2'>Analyze</Button>
+        <Button color="blue" className='w-full col-start-2'>Save</Button>
       </div>
     </div>
   );
