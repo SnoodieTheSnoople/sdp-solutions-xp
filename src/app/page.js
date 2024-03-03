@@ -17,15 +17,8 @@ export default function Home() {
           {/* Left */}
           <FileUploadComponent />
 
-          {/* <div className="relative flex py-5 items-center">
-            <div className="flex-grow border-t border-gray-400"></div>
-            <span className="flex-shrink mx-4 text-gray-400">Alternatively</span>
-            <div className="flex-grow border-t border-gray-400"></div>
-          </div> */}
-
           <Divider><p>Alternatively</p></Divider>
 
-          
           {/* <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Copy & Paste Your Code Here</label> */}
           <Label htmlFor="message" value='Copy & Paste Your Code Here'/>
           <textarea id="message" rows="4" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your thoughts here..."></textarea>
@@ -38,7 +31,7 @@ export default function Home() {
               <Button color="gray" className='w-full rounded-none'>PHP</Button>
               <Button color="gray" className='w-full rounded-l-none'>Python</Button>
           </div>
-          
+
           <br></br>
           <br></br>
 
