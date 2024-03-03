@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { Button, FileInput, Label, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
 import NavbarComponent from '@/components/navbar';
 import FileUploadComponent from '@/components/fileUpload';
+import Divider from '@/components/divider';
 
 export default function Home() {
   return (
@@ -16,11 +17,13 @@ export default function Home() {
           {/* Left */}
           <FileUploadComponent />
 
-          <div className="relative flex py-5 items-center">
+          {/* <div className="relative flex py-5 items-center">
             <div className="flex-grow border-t border-gray-400"></div>
             <span className="flex-shrink mx-4 text-gray-400">Alternatively</span>
             <div className="flex-grow border-t border-gray-400"></div>
-          </div>
+          </div> */}
+
+          <Divider><p>Alternatively</p></Divider>
 
           
           {/* <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Copy & Paste Your Code Here</label> */}
