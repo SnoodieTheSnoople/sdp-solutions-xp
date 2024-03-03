@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button, FileInput, Label, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
 import NavbarComponent from '@/components/navbar';
+import FileUploadComponent from '@/components/fileUpload';
 
 export default function Home() {
   return (
@@ -13,12 +14,7 @@ export default function Home() {
 
         <div className="col-span-1 bg-slate-100 rounded-lg pt-10 pl-4 pr-4 pb-10">
           {/* Left */}
-          <div>
-            <div>
-              <Label htmlFor="file-upload-helper-text" value='Upload File'/>
-            </div>
-            <FileInput id="file-upload-helper-text" helperText="SVG, PNG, JPG or GIF (MAX. 800x400px)." />
-          </div>
+          <FileUploadComponent />
 
           <div className="relative flex py-5 items-center">
             <div className="flex-grow border-t border-gray-400"></div>
