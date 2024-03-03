@@ -10,7 +10,7 @@ export default function NavbarComponent() {
             </NavbarBrand>
             <NavbarToggle/>
             <NavbarCollapse>
-                <NavbarLink href='/' active>Home</NavbarLink>
+                <NavbarLink href='/'>Home</NavbarLink>
                 <NavbarLink href='/'>About</NavbarLink>
             </NavbarCollapse>
             </Navbar>
