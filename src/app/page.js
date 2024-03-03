@@ -1,22 +1,12 @@
 import Link from 'next/link';
 import { Button, FileInput, Label, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
+import NavbarComponent from '@/components/navbar';
 
 export default function Home() {
   return (
     <div>
       {/* Navbar */}
-      <div className='pt-2 pb-2 pl-4 pr-4'>
-        <Navbar fluid rounded>
-          <NavbarBrand as={Link} href='/'>
-            <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>SDP SOLUTIONS</span>
-          </NavbarBrand>
-          <NavbarToggle/>
-          <NavbarCollapse>
-            <NavbarLink href='/'>Home</NavbarLink>
-            <NavbarLink href='/'>About</NavbarLink>
-          </NavbarCollapse>
-        </Navbar>
-      </div>
+      <NavbarComponent />
 
       {/* Main */}
       <div className="grid grid-cols-2 gap-2 pl-2 pr-2 pt-2">
