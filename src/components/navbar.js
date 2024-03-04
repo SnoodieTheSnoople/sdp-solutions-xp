@@ -8,11 +8,11 @@ export default function NavbarComponent() {
             <NavbarBrand as={Link} href='/'>
                 <span className='self-center whitespace-nowrap text-xl font-semibold dark:text-white'>SDP SOLUTIONS</span>
             </NavbarBrand>
-            <NavbarToggle/>
+            {/* <NavbarToggle/>
             <NavbarCollapse>
-                <NavbarLink href='/'>Home</NavbarLink>
-                <NavbarLink href='/'>About</NavbarLink>
-            </NavbarCollapse>
+                <NavbarLink href='#'>Home</NavbarLink>
+                <NavbarLink href='#'>About</NavbarLink>
+            </NavbarCollapse> */}
             </Navbar>
         </div>
     );
