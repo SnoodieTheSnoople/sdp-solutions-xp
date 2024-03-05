@@ -6,14 +6,14 @@ import Divider from '@/components/divider';
 
 export default function Home() {
   return (
-    <div>
+    <div className='bg-blue-50 pb-2'>
       {/* Navbar */}
       <NavbarComponent />
 
       {/* Main */}
       <div className="grid grid-cols-2 gap-2 pl-2 pr-2 pt-2">
 
-        <div className="col-span-1 bg-slate-100 rounded-lg pt-10 pl-4 pr-4 pb-10">
+        <div className="col-span-1 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
           {/* Left */}
           <FileUploadComponent />
 
@@ -24,12 +24,12 @@ export default function Home() {
           <br></br>
 
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose the programming language and it will read your code.</label>
-          <div>
+          <div className='flex items-center justify-center'>
             <ButtonGroup outline>
-              <Button color="dark">Java</Button>
-              <Button color="dark">C#</Button>
-              <Button color="dark">PHP</Button>
-              <Button color="dark">Python</Button>
+              <Button>Java</Button>
+              <Button>C#</Button>
+              <Button>PHP</Button>
+              <Button>Python</Button>
             </ButtonGroup>
           </div>
 
@@ -65,14 +65,14 @@ export default function Home() {
 
         </div>
 
-        <div className="col-span-1 bg-slate-100 rounded-lg pt-10 pl-4 pr-4 pb-10">
+        <div className="col-span-1 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
           {/* Right */}
           <div className="h-96 bg-white rounded-lg p-2">
             <p>Code Preview</p>
             {/* INSERT READ CODE HERE */}
           </div>
         </div>
-        <Button color="dark" className='w-full col-start-2'>Save</Button>
+        <Button className='w-full col-start-2'>Save</Button>
       </div>
     </div>
   );
