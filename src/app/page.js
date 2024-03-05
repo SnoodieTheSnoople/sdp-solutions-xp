@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button, FileInput, Label, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from 'flowbite-react';
+import { Button, ButtonGroup, Label } from 'flowbite-react';
 import NavbarComponent from '@/components/navbar';
 import FileUploadComponent from '@/components/fileUpload';
 import Divider from '@/components/divider';
@@ -24,11 +24,13 @@ export default function Home() {
           <br></br>
 
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose the programming language and it will read your code.</label>
-          <div className="grid grid-cols-4 gap-0">
-              <Button color="gray" className='w-full rounded-r-none'>Java</Button>
-              <Button color="gray" className='w-full rounded-none'>C#</Button>
-              <Button color="gray" className='w-full rounded-none'>PHP</Button>
-              <Button color="gray" className='w-full rounded-l-none'>Python</Button>
+          <div>
+            <ButtonGroup outline>
+              <Button color="dark">Java</Button>
+              <Button color="dark">C#</Button>
+              <Button color="dark">PHP</Button>
+              <Button color="dark">Python</Button>
+            </ButtonGroup>
           </div>
 
           <br></br>
@@ -70,7 +72,7 @@ export default function Home() {
             {/* INSERT READ CODE HERE */}
           </div>
         </div>
-        <Button color="blue" className='w-full col-start-2'>Save</Button>
+        <Button color="dark" className='w-full col-start-2'>Save</Button>
       </div>
     </div>
   );
