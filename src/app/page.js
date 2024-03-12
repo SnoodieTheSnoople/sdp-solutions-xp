@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { Button, ButtonGroup, Label } from 'flowbite-react';
 import NavbarComponent from '@/components/navbar';
 import FileUploadComponent from '@/components/fileUpload';
@@ -70,6 +69,15 @@ export default function Home() {
           <div className="h-96 bg-white rounded-lg p-2">
             <p>Code Preview</p>
             {/* INSERT READ CODE HERE */}
+          </div>
+
+          <br></br>
+
+          <div className='grid grid-cols-2'>
+            <div className="col-span-2 grid grid-cols-2 gap-5 pt-2">
+              <p className="flex items-center justify-end font-bold">Code Quality</p>
+              <p className="flex items-center justify-center bg-white rounded-lg w-40 h-10" id="codeQuality">placeholder</p>
+            </div>
           </div>
         </div>
         <Button className='w-full col-start-2'>Save</Button>
