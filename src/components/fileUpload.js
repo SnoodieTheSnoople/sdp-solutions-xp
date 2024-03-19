@@ -1,7 +1,7 @@
 
 import { FileInput, Label } from 'flowbite-react';
 
-export default function FileUploadComponent() {
+export default function FileUploadComponent({ setContent }) {
 
     const handleFileChange = (event) => {
         const file = event.target.files[0]; 
