@@ -151,8 +151,8 @@ export default function Home() {
           </div>
         </div>
         <div className="col-span-1 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
+          <p className='font-bold'>Code Preview</p>
           <div className="h-96 bg-white rounded-lg p-2 overflow-auto">
-            <p>Code Preview</p>
             <pre>{content}</pre>
           </div>
           <Button className='w-full' onClick={handleTestClick}>Test</Button>
