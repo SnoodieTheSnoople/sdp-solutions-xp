@@ -10,7 +10,7 @@ const Calc = ({ code, onResults }) => {
 
     // return code.split('\n').length; <- Original, incorrect.
 
-    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'public static void main'];
+    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do',  'foreach', 'elif', 'continue', 'break', 'public static void main'];
     let count = 0;
     // Start to end edge.
     keywords.forEach((keyword) => {
@@ -29,7 +29,7 @@ const Calc = ({ code, onResults }) => {
 
   const calculateNodes = () => {
     // Changed to include PSVM as it is a main entry point.
-    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'foreach', 'elif', 'continue', 'break'];
+    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do', 'foreach', 'elif', 'continue', 'break', 'public static void main'];
     let count = 0;
 
     // Original.
@@ -40,7 +40,7 @@ const Calc = ({ code, onResults }) => {
     // New. Will read line by line to account for else if and psvm
     let lines = code.split('\n');
     lines.forEach((line) => {
-      if (line.includes('if') && line.includes('else') || line.includes('public') && line.includes('static') && line.includes('void') && line.includes('main')) {
+      if (line.includes('if') && line.includes('else')) {
         count++;
       } else {
         keywords.forEach((keyword) => {
