@@ -29,7 +29,7 @@ const Calc = ({ code, onResults }) => {
 
   const calculateNodes = () => {
     // Changed to include PSVM as it is a main entry point.
-    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'public static void main'];
+    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'foreach', 'elif', 'continue', 'break'];
     let count = 0;
 
     // Original.
@@ -37,10 +37,10 @@ const Calc = ({ code, onResults }) => {
       //   count += (code.match(new RegExp(keyword, 'g')) || []).length;
       // });
 
-    // New. Will read line by line to account for else if
+    // New. Will read line by line to account for else if and psvm
     let lines = code.split('\n');
     lines.forEach((line) => {
-      if (line.includes('if') && line.includes('else')) {
+      if (line.includes('if') && line.includes('else') || line.includes('public') && line.includes('static') && line.includes('void') && line.includes('main')) {
         count++;
       } else {
         keywords.forEach((keyword) => {
