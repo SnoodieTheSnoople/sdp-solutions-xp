@@ -182,7 +182,10 @@ export default function Home() {
                     <div className="h-96 bg-white rounded-lg p-2 overflow-auto">
                         <pre>{content}</pre>
                     </div>
-                    <Button className='w-full mt-4' onClick={handleTestClick}>Test</Button>
+                    <div className='grid grid-cols-2'>
+                        <Button className='w-full mt-4' onClick={handleTestClick}>Test</Button>
+                        <Button className='w-full mt-4'>Save</Button>
+                    </div>
                     <br/>
                     <div className='grid grid-cols-2 gap-5 pt-4'>
                         <p className="text-center font-semibold col-span-2">Complexity of Code</p>
