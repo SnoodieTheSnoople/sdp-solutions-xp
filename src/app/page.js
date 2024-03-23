@@ -183,10 +183,17 @@ export default function Home() {
                         <pre>{content}</pre>
                     </div>
                     <Button className='w-full mt-4' onClick={handleTestClick}>Test</Button>
-                    <div className='pt-4'>
-                        <p className="font-bold">Your Results:</p>
-                        <p>{metrics.M && getRiskLevel(metrics.M)}</p>
+                    <br/>
+                    <div className='grid grid-cols-2 gap-5 pt-4'>
+                        <p className="text-center font-semibold col-span-2">Complexity of Code</p>
+                        <div className='col-span-2 grid grid-cols-2 gap-5'>
+                            <div className='grid grid-cols-2 gap-5'>
+                                <p className='flex items-center justify-end font-bold'>Risk</p>
+                                <p className='flex items-center justify-center bg-white rounded-lg w-60 h-10'>{metrics.M && getRiskLevel(metrics.M)}</p>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
             {shouldCalculate && <Calc code={content} onResults={updateMetrics} />}
