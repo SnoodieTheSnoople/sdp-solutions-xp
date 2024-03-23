@@ -94,6 +94,32 @@ import FileUploadComponent from '@/components/fileUpload';
 import Divider from '@/components/divider';  
 import Calc from '@/components/functions/Calc 1'; 
 
+// function handleSaveClick() {
+//     console.log('Save button clicked');
+//     if (content === '') {
+//         alert('No content to save');
+//     }
+//     if (metrics.M === 0 && metrics.N === 0 && metrics.E === 0 && metrics.P === 0) {
+//         alert('No metrics to save');
+//     }
+
+//     console.log('Content:', content);
+//     console.log('Metrics:', metrics);
+// }
+
+function download(filename, text) {
+    var element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
 export default function Home() {
     const [content, setContent] = useState('');
     const [fileContent, setFileContent] = useState('');
@@ -113,6 +139,27 @@ export default function Home() {
     const handleTestClick = useCallback(() => {
         setShouldCalculate(true);
     }, []);
+
+    const handleSaveClick = useCallback(() => {
+        console.log('Save button clicked');
+        if (content === '') {
+            alert('No content to save');
+        }
+        if (metrics.M === 0 && metrics.N === 0 && metrics.E === 0 && metrics.P === 0) {
+            alert('Press "Test" to calculate metrics before saving.');
+        }
+        // console.log('Content:', content);
+        // console.log('Calculated Cyclomatic Complexity: ', metrics.M);
+        // console.log('Nodes: ', metrics.N);
+        // console.log('Edges: ', metrics.E);
+        // console.log('Components: ', metrics.P);
+        // console.log('Risk:', getRiskLevel(metrics.M));
+
+        let fileMetrics = 'Calculated Cyclomatic Complexity: ' + metrics.M + '\nNodes: ' + metrics.N + '\nEdges: ' + metrics.E + '\nComponents: ' + metrics.P;
+        let file = 'Your Code:\n' + content + '\n\n' + fileMetrics + '\n\nRisk:\n' + getRiskLevel(metrics.M);
+
+        download('cyclomatic-complexity.txt', file);
+    }, [content, metrics]);
 
     const handleFileUploadContent = useCallback((fileUploadedContent) => {
         setFileContent(fileUploadedContent);
@@ -184,7 +231,7 @@ export default function Home() {
                     </div>
                     <div className='grid grid-cols-2'>
                         <Button className='w-full mt-4' onClick={handleTestClick}>Test</Button>
-                        <Button className='w-full mt-4'>Save</Button>
+                        <Button className='w-full mt-4' onClick={handleSaveClick}>Save</Button>
                     </div>
                     <br/>
                     <div className='grid grid-cols-2 gap-5 pt-4'>
