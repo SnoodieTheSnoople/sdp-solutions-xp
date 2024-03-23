@@ -176,13 +176,17 @@ export default function Home() {
 
     const getRiskLevel = (complexity) => {
         if (complexity >= 1 && complexity <= 10) {
-            return "Simple procedure, little risk";
+            // return "Simple procedure, little risk";
+            return "Very Good, low risk";
         } else if (complexity >= 11 && complexity <= 20) {
-            return "More complex, moderate risk";
+            // return "More complex, moderate risk";
+            return "Good, moderate risk";
         } else if (complexity >= 21 && complexity <= 50) {
-            return "Complex, high risk";
+            // return "Complex, high risk";
+            return "Poor, high risk - consider refactoring";
         } else if (complexity > 50) {
-            return "Untestable code, very high risk";
+            // return "Untestable code, very high risk";
+            return "Very Bad, refactor needed";
         }
         return "Unknown";
     };
@@ -191,6 +195,7 @@ export default function Home() {
         <div className='bg-blue-50 pb-2'>
             <NavbarComponent />
             <div className="grid grid-cols-2 gap-2 pl-2 pr-2 pt-2">
+                {/* Left Panel */}
                 <div className="col-span-1 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
                     <FileUploadComponent onFileContent={handleFileUploadContent} />
                     <Divider><p>Alternatively</p></Divider>
@@ -224,6 +229,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
+
+                {/* Right Panel */}
                 <div className="col-span-1 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
                     <p className='font-bold'>Code Preview</p>
                     <div className="h-96 bg-white rounded-lg p-2 overflow-auto">
@@ -245,6 +252,16 @@ export default function Home() {
                         </div>
                     </div>
                     
+                </div>
+
+                <div className="col-span-2 bg-blue-300 rounded-lg pt-10 pl-4 pr-4 pb-10">
+                    <p className='flex items-center justify-center font-bold'>Help! What is this?</p>
+                    <br/>
+                    <p className='text-center'>The purpose of this website is to help you understand your code complexity. On the left panel, you have the ability to upload
+                     your own code or copy-and-paste your code and calculate the Cyclomatic Complexity!</p>
+                    <br/>
+                    <p className='text-center'>On the right panel, you are able to see your code, save it, and have a quick description of the complexity of the code. If you choose to save your results, it will save all of the content on this page
+                    which is your code, the metric, and description.</p>
                 </div>
             </div>
             {shouldCalculate && <Calc code={content} onResults={updateMetrics} />}
