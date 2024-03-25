@@ -144,9 +144,11 @@ export default function Home() {
         console.log('Save button clicked');
         if (content === '') {
             alert('No content to save');
+            return;
         }
         if (metrics.M === 0 && metrics.N === 0 && metrics.E === 0 && metrics.P === 0) {
             alert('Press "Test" to calculate metrics before saving.');
+            return;
         }
         // console.log('Content:', content);
         // console.log('Calculated Cyclomatic Complexity: ', metrics.M);
