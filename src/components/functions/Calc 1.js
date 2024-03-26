@@ -10,7 +10,8 @@ const Calc = ({ code, onResults }) => {
 
     // return code.split('\n').length; <- Original, incorrect.
 
-    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do',  'foreach', 'elif', 'continue', 'break', 'public static void main'];
+    // const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do',  'foreach', 'elif', 'continue', 'break', 'public static void main'];
+    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do', 'foreach', 'elif', 'public static void main'];
     let count = 0;
     // Start to end edge.
     keywords.forEach((keyword) => {
@@ -29,7 +30,8 @@ const Calc = ({ code, onResults }) => {
 
   const calculateNodes = () => {
     // Changed to include PSVM as it is a main entry point.
-    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do', 'foreach', 'elif', 'continue', 'break', 'public static void main'];
+    // const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do', 'foreach', 'elif', 'continue', 'break', 'public static void main'];
+    const keywords = ['if', 'else', 'while', 'for', 'switch', 'case', 'function', 'do', 'foreach', 'elif', 'public static void main'];
     let count = 0;
 
     // Original.
