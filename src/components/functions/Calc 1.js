@@ -59,7 +59,20 @@ const Calc = ({ code, onResults }) => {
   // Need to change where it would read any called components.
   // E.g., a function is called in the main method. count++.
   const calculateComponents = () => {
-    return 1;
+    const keywords = ['public static void main', 'function', 'public static', 'public', 'private', 'protected'];
+    const dataTypes = ['int', 'float', 'double', 'char', 'string', 'bool'];
+    let count = 0;
+    let lines = code.split('\n');
+    lines.forEach((line) => {
+      if (!line.includes('class') && !line.includes(dataTypes)) {
+        keywords.forEach((keyword) => {
+          if (line.includes(keyword)) {
+            count++;
+          }
+        });
+      }
+    });
+    return count;
   };
 
   const calculateCyclomaticComplexity = (E, N, P) => {

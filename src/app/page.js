@@ -177,16 +177,16 @@ export default function Home() {
     }, [content, fileContent]);
 
     const getRiskLevel = (complexity) => {
-        if (complexity >= 1 && complexity <= 10) {
+        if (complexity >= 1 && complexity <= 5) {
             // return "Simple procedure, little risk";
             return "Very Good, low risk";
-        } else if (complexity >= 11 && complexity <= 20) {
+        } else if (complexity >= 6 && complexity <= 10) {
             // return "More complex, moderate risk";
             return "Good, moderate risk";
-        } else if (complexity >= 21 && complexity <= 50) {
+        } else if (complexity >= 11 && complexity <= 20) {
             // return "Complex, high risk";
             return "Poor, high risk - consider refactoring";
-        } else if (complexity > 50) {
+        } else if (complexity > 21) {
             // return "Untestable code, very high risk";
             return "Very Bad, refactor needed";
         }
@@ -249,7 +249,7 @@ export default function Home() {
                         <div className='col-span-2 grid grid-cols-2 gap-5'>
                             <div className='grid grid-cols-2 gap-5'>
                                 <p className='flex items-center justify-end font-bold'>Risk</p>
-                                <p className='flex items-center justify-center bg-white rounded-lg w-60 h-10'>{metrics.M && getRiskLevel(metrics.M)}</p>
+                                <p className='flex items-center justify-center bg-white rounded-lg w-80 h-10'>{metrics.M && getRiskLevel(metrics.M)}</p>
                             </div>
                         </div>
                     </div>
