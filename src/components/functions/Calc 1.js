@@ -59,15 +59,15 @@ const Calc = ({ code, onResults }) => {
   // Need to change where it would read any called components.
   // E.g., a function is called in the main method. count++.
   const calculateComponents = () => {
-    const keywords = ['public static void main', 'function', 'public static', 'public', 'private', 'protected'];
+    const keywords = ['function', 'public static', 'public void', 'private void', 'protected void'];
     const dataTypes = ['int', 'float', 'double', 'char', 'string', 'bool'];
     let count = 0;
     let lines = code.split('\n');
     lines.forEach((line) => {
-      if (!line.includes('class') && !line.includes(dataTypes)) {
+      if (!line.includes('class')) {
         keywords.forEach((keyword) => {
           if (line.includes(keyword)) {
-            count++;
+            count+=1;
           }
         });
       }
